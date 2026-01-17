@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KL端口验证成功
+    作者：IE受委屈DFY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "KaiTi", "STKaiti", serif;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .success-container {
+            width: 90%;
+            max-width: 550px;
+            padding: 45px 35px;
+            border: 2px solid #2c3e50;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .title {
+            font-size: 30px;
+            color: #2c3e50;
+            margin-bottom: 35px;
+            font-weight: bold;
+        }
+        .status-row {
+            font-size: 22px;
+            color: #34495e;
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 10px 0;
+            border-bottom: 1px dashed #bdc3c7;
+        }
+        .status-row span {
+            color: #27ae60;
+            font-weight: 600;
+        }
+        .join-btn {
+            margin-top: 40px;
+        }
+        .join-btn a {
+            display: inline-block;
+            padding: 12px 36px;
+            background-color: #27ae60;
+            color: #ffffff;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .join-btn a:hover {
+            background-color: #219653;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <h1 class="title">KL端口验证成功</h1>
+        <div class="status-row">
+        
+            端口名称：<span>KL公益端口</span>
+        </div>
+        <div class="status-row">
+            作者：<span id="conn-status">IE受委屈DFY</span>
+        </div>
+        <div class="status-row">
+            支持项目：<span id="conn-status">直装√注入√文件√容器√</span>
+        </div>
+        <div class="status-row">
+            服务器连接状态：<span id="conn-status">香港①：活跃</span>
+        </div>
+        <div class="status-row">
+            实时延迟：<span id="delay">25ms</span>
+        </div>
+        <div class="status-row">
+            链接时间：<span id="bj-time"></span>
+        </div>
+        <div class="join-btn">
+            <a href="https://t.me/XCNBVC66" target="_blank">加入我们</a>
+        </div>
+    </div>
+
+    <script>
+        // 实时延迟 20-30ms 随机更新
+        function updateDelay() {
+            const randomDelay = Math.floor(Math.random() * 11) + 20;
+            document.getElementById('delay').textContent = `${randomDelay}ms`;
+        }
+        setInterval(updateDelay, 1000);
+        updateDelay();
+
+        // 显示北京时间
+        function updateBeijingTime() {
+            const now = new Date();
+            const timeFormat = now.toLocaleString('zh-CN', {
+                timeZone: 'Asia/Shanghai',
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('bj-time').textContent = timeFormat;
+        }
+        setInterval(updateBeijingTime, 1000);
+        updateBeijingTime();
+    </script>
+</body>
+</html>
